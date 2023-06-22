@@ -3,14 +3,16 @@
   color: white;
   background-color: #f5f5f5;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .dashboardMainCointainer h1{
   margin-top: 10px;
 }
-.left {
+.leftD {
   width: 20%;
   background-color: black;
-  height: 95vh;
+  height: auto;
   min-width: 280px;
   border-radius: 20px;
   margin-right: 3%;
@@ -18,8 +20,9 @@
 .dashBoardLeftCointainer {
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -47,33 +50,40 @@
   width: 130px;
   padding-top: 150px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: start;
 }
-.right {
+.endDiv p{
+  cursor: pointer;
+}
+.rightD {
   width: 75%;
   border-radius: 20px;
   overflow: hidden;
   color: black;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
 }
 .dashboardNavContainer {
   width: 100%;
-  height: 60px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 .navSearchMain {
-  width: 30%;
-  height: 100%;
+  width: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   color: black;
   font-size: 20px;
+  gap: 5px;
 }
 .navSearchMain img {
   width: 50px;
@@ -105,15 +115,18 @@
 }
 .annaliticBox {
   width: 100%;
-  height: 125px;
+  height: auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 .analyticSingleContainer {
   box-sizing: border-box;
   width: 250px;
-  height: 100%;
+  height: 150px;
   border-radius: 20px;
   padding-left: 20px;
   padding-right: 20px;
@@ -166,14 +179,15 @@ h1 {
 }
 .bottomDiv {
   width: 100%;
-  height: 240px;
+  height: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .pieChart {
   width: 47%;
   border-radius: 20px;
-  height: 100%;
+  height: 250px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -197,6 +211,7 @@ h1 {
 }
 .todaysSchedule {
   width: 47%;
+  height: 250px;
   border-radius: 20px;
   padding: 20px;
   box-sizing: border-box;
@@ -232,4 +247,69 @@ h1 {
   border-left: 4px solid #6972c3;
   padding-left: 10px;
   line-height:2px
+}
+@media screen and (max-width:1330px) {
+  .dashboardMainCointainer{
+    gap: 20px;
+  }
+  
+  .leftD{
+      width: 90%;
+      height: auto;
+  }
+  
+  .dashBoardLeftCointainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .dashboardNavigation{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    gap: 5px;
+  }
+  .dashboardNavigation p img{
+    width: 10px;
+    margin-right: 2px;
+  }
+  .endDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 10px;
+    padding-top: 0;
+    gap: 5px;
+  }
+  .rightD{
+    width: 90%;
+  }
+  .dashboardNavContainer{
+    justify-content: center;
+  }
+  .annaliticBox{
+    justify-content: center;
+  }
+}
+@media screen and (max-width:1100px) {
+  .leftD , .rightD{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:750px) {
+  .bottomDiv{
+    flex-direction: column;
+    gap: 10px;
+
+  }
+  .pieChart{
+    width: 100%;
+  }
+  .todaysSchedule{
+    width: 100%;
+  }
 }

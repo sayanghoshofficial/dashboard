@@ -13,10 +13,10 @@ import { Analytics } from "../data/analyticsData";
 const DashBoard = () => {
   return (
     <div className="dashboardMainCointainer">
-      <div className="left">
+      <div className="leftD">
         <DashBoardLeft />
       </div>
-      <div className="right">
+      <div className="rightD">
         <DashBoardNav />
         <div className="annaliticBox">
           {Analytics.map((a) => (

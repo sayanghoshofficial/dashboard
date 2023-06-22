@@ -48,7 +48,7 @@ class PieRechartComponent extends React.Component {
         <div className="pieHeading">
           <h2>Top Products</h2>
           <p>
-            May - June 2021 <i class="fa-solid fa-chevron-down"></i>
+            May - June 2021 <i className="fa-solid fa-chevron-down"></i>
           </p>
         </div>
         <ResponsiveContainer>
@@ -65,7 +65,7 @@ class PieRechartComponent extends React.Component {
               dataKey="value"
               nameKey="name"
               cx="30%"
-              cy="60%"
+              cy="50%"
               outerRadius={80}
               fill="#8884d8"
             >

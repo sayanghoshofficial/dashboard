@@ -100,7 +100,7 @@ label{
 @media screen and (min-width:900px) {
     .splitScreen{
         flex-direction: row;
-        height: 100vh;
+        height: 100vh !important;
     }
     .left, .right{
         display: flex;

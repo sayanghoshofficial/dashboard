@@ -4,11 +4,16 @@
   line-height: 1.5;
   --primary-blue: #233975;
 }
+#root{
+  height: 100vh;
+  width: 100vw;
+}
 body{
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  min-width: 400px;
 }
 h1{
   font-size: 2.25rem;
@@ -24,4 +29,7 @@ a{
 }
 a:hover{
   text-decoration: underline;
+}
+.SignOut:hover{
+  color: red;
 }

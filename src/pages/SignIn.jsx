@@ -42,11 +42,11 @@ const SignIn = () => {
           </button>
        
           <div className="inputCointainer email">
-            <label for="email">Email address</label>
+            <label htmlFor="email">Email address</label>
             <input id="email" name="email" type="email" />
           </div>
           <div className="inputCointainer password">
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               id="password"
               name="password"

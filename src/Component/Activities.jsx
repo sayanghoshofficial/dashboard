@@ -18,7 +18,7 @@ const Activities = () => {
         <div className="innerHeading">
           <h2>Activites</h2>
           <p>
-            May - June 2021 <i class="fa-solid fa-chevron-down"></i>
+            May - June 2021 <i className="fa-solid fa-chevron-down"></i>
           </p>
         </div>
       </div>
@@ -34,7 +34,7 @@ const Activities = () => {
           />
           <YAxis tickLine={false} axisLine={false} />
           <Tooltip contentStyle={{ backgroundColor: "#f5f5f5" }} />
-          <Legend wrapperStyle={{ top: -50, left: 450 }} />
+          <Legend wrapperStyle={{ top: "-10%", left: "40%" }} />
           <Line
             type="monotone"
             dataKey="Guest"
