@@ -60,7 +60,6 @@
 .dashboardNavContainer{
     width: 100%;
     height: 60px;
-    border: 2px solid blue;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,7 +67,6 @@
 }
 .navSearchMain{
     width: 30%;
-    
     height: 100%;
     display: flex;
     align-items: center;
@@ -111,12 +109,24 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid green;
 }
 .analyticSingleContainer{
+    box-sizing: border-box;
     width: 250px;
     height: 100%;
-    border: 2px solid red;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.analyticSingleContainer i{
+    position: relative;
+    margin-left: 170px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+.analyticSingleContainer p,h1{
+    position: relative;
+    margin-top: 0px;
 }
 .lineGraphBox{
     width: 100%;
@@ -125,7 +135,22 @@
 }
 .bottomDiv{
     width: 100%;
-    height: 210px ;
+    height: 240px ;
     border: 2px solid blue;
+    display: flex;
+    justify-content: space-between;
 }
-
+.pieChart{
+  width: 47%;
+  border-radius: 20px;
+  height: 100%;
+  border: 2px solid red;
+}
+.todaysSchedule{
+  width: 47%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid red;
+}
