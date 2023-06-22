@@ -1,4 +1,5 @@
 import DashBoardLeft from "./DashBoardLeft";
+import DashBoardNav from "./DashBoardNav";
+import AnalyticsBox from "./AnalyticsBox";
 
-
-export {DashBoardLeft};
+export { DashBoardLeft, DashBoardNav, AnalyticsBox };
