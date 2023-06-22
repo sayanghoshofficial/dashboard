@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { provider, auth } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
 import Glogo from"../assets/Image/glogo.png";
 import "../Style/SignUp.css";
 
 const SignUp = () => {
+  const [value, setValue] = useState("");
+
+  const handleClick = () => {
+    signInWithPopup(auth, provider).then((data) => {
+      setValue(data.user.email);
+      localStorage.setItem("email", data.user.email);
+    });
+  };
+
+  useEffect(() => {
+    setValue(localStorage.getItem("email"));
+  });
   return (
     <div className="splitScreen">
       <div className="left">
@@ -17,7 +31,7 @@ const SignUp = () => {
             <h2>Sign Up</h2>
             <p>Sign up to your account</p>
           </section>
-          <button className="signupBtn google" type="submit">
+          <button className="signupBtn google" type="submit" onClick={handleClick}>
           <img src={Glogo} alt="Glogo"/>
             Sign up with Google
           </button>
@@ -37,7 +51,7 @@ const SignUp = () => {
               type="password"
               placeholder="Must be 6 characters"
             />
-            <i className="far fa-eye-slash"></i>
+           
           </div>
           <button className="signupBtn" type="submit">
             Sign Up

@@ -53,7 +53,7 @@ const SignIn = () => {
               type="password"
               placeholder="Must be 6 characters"
             />
-            <i className="far fa-eye-slash"></i>
+            
           </div>
           <button className="signupBtn" type="submit">
             Sign In

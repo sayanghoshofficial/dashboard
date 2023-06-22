@@ -64,9 +64,9 @@ label{
     position: relative;
 }
 .inputCointainer .password i{
-    position: relative;
-    top: 42px;
-    right: 16px;
+  position: relative;
+  top: -54px;
+  right: -296px;
 }
 .signupBtn{
     display: block;
