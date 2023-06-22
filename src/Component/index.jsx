@@ -4,4 +4,14 @@ import AnalyticsBox from "./AnalyticsBox";
 import Schedule from "./Schedule";
 import Activities from "./Activities";
 
-export { DashBoardLeft, DashBoardNav, AnalyticsBox, Schedule, Activities };
+import PieRechartComponent from "./PieRechartComponent";
+
+export {
+  DashBoardLeft,
+  DashBoardNav,
+  AnalyticsBox,
+  Schedule,
+  Activities,
+ 
+  PieRechartComponent
+};

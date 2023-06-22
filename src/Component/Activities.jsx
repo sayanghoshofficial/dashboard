@@ -7,35 +7,33 @@ import {
   YAxis,
   CartesianGrid,
   Legend,
+  Tooltip,
 } from "recharts";
 import { LineChartData } from "../data/LineChatData";
 
 const Activities = () => {
-  const pdata = [
-    {
-      name: "Python",
-      student: 1000,
-      fees: 6000,
-    },
-    {
-      name: "java",
-      student: 2000,
-      fees: 7000,
-    },
-    {
-      name: "javaScript",
-      student: 1000,
-      fees: 4000,
-    },
-  ];
   return (
     <>
-      <h1>Activites</h1>
-      <ResponsiveContainer width="100%">
-        <LineChart data={LineChartData} width="100%" height={100}>
+      <div className="lineChartHeading">
+        <div className="innerHeading">
+          <h2>Activites</h2>
+          <p>
+            May - June 2021 <i class="fa-solid fa-chevron-down"></i>
+          </p>
+        </div>
+      </div>
+
+      <ResponsiveContainer width="90%" height="80%">
+        <LineChart data={LineChartData} width="90%" height={100}>
           <CartesianGrid stroke="#8c8c9b" vertical={false} />
-          <XAxis dataKey="name" intercept={"preserveStartEnd"} tickLine={false} axisLine={false}/>
-          <YAxis tickLine={false} axisLine={false}/>
+          <XAxis
+            dataKey="name"
+            intercept={"preserveStartEnd"}
+            tickLine={false}
+            axisLine={false}
+          />
+          <YAxis tickLine={false} axisLine={false} />
+          <Tooltip contentStyle={{ backgroundColor: "#f5f5f5" }} />
           <Legend wrapperStyle={{ top: -50, left: 450 }} />
           <Line
             type="monotone"

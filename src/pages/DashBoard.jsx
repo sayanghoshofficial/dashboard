@@ -4,6 +4,7 @@ import {
   AnalyticsBox,
   DashBoardLeft,
   DashBoardNav,
+  PieRechartComponent,
   Schedule,
 } from "../Component";
 import "../Style/Dashboard.css";
@@ -32,7 +33,9 @@ const DashBoard = () => {
           <Activities />
         </div>
         <div className="bottomDiv">
-          <div className="pieChart"></div>
+          <div className="pieChart">
+            <PieRechartComponent />
+          </div>
           <div className="todaysSchedule">
             <Schedule />
           </div>
