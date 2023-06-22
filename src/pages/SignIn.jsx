@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { provider, auth } from "../firebase";
-import { signInWithPopup } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { signInWithGoogle } from "../firebase";
+
+import { Link, useNavigate } from "react-router-dom";
 import Glogo from "../assets/Image/glogo.png";
 import "../Style/SignUp.css";
 
 const SignIn = () => {
-  const [value, setValue] = useState("");
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-    signInWithPopup(auth, provider).then((data) => {
-      setValue(data.user.email);
-      localStorage.setItem("email", data.user.email);
-    });
+  const handleSignIn = async(e) => {
+    e.preventDefault();
+    try {
+      signInWithGoogle();
+    } catch (err) {
+      console.log(err);
+    }
   };
-
-  useEffect(() => {
-    setValue(localStorage.getItem("email"));
-  });
 
   return (
     <div className="splitScreen">
@@ -35,12 +33,12 @@ const SignIn = () => {
           <button
             className="signupBtn google"
             type="submit"
-            onClick={handleClick}
+            onClick={handleSignIn}
           >
             <img src={Glogo} alt="Glogo" />
             Sign in with Google
           </button>
-       
+
           <div className="inputCointainer email">
             <label htmlFor="email">Email address</label>
             <input id="email" name="email" type="email" />
@@ -53,7 +51,6 @@ const SignIn = () => {
               type="password"
               placeholder="Must be 6 characters"
             />
-            
           </div>
           <button className="signupBtn" type="submit">
             Sign In

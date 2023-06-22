@@ -5,6 +5,8 @@ import tagLogo from "../assets/Image/supermarket.png";
 import settingLogo from "../assets/Image/setting.png";
 import scheduleLogo from "../assets/Image/timetable.png";
 import userLogo from "../assets/Image/user.png";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 const DashBoardLeft = () => {
   return (
@@ -36,7 +38,7 @@ const DashBoardLeft = () => {
       <div className="endDiv">
         <p>Help</p>
         <p>Contact Us</p>
-        <p className="SignOut">
+        <p className="SignOut" onClick={(e)=>{signOut(auth)}}>
           <i className="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
         </p>
       </div>

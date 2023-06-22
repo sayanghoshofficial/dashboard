@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { Navigate } from "react-router-dom";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBX2hdFqHlAQrjvVak-h_mdBVkqVz6Cgwo",
@@ -15,5 +17,17 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
+const signInWithGoogle = () => {
+ 
+  
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      result && <Navigate to={"/dashboard"}/>;
+      
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
-export { auth, provider };
+export { auth, provider, signInWithGoogle };
