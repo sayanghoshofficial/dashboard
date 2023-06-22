@@ -1,5 +1,11 @@
 import React from "react";
-import { AnalyticsBox, DashBoardLeft, DashBoardNav, Schedule } from "../Component";
+import {
+  Activities,
+  AnalyticsBox,
+  DashBoardLeft,
+  DashBoardNav,
+  Schedule,
+} from "../Component";
 import "../Style/Dashboard.css";
 import { Analytics } from "../data/analyticsData";
 
@@ -22,10 +28,14 @@ const DashBoard = () => {
             />
           ))}
         </div>
-        <div className="lineGraphBox"></div>
+        <div className="lineGraphBox">
+          <Activities />
+        </div>
         <div className="bottomDiv">
           <div className="pieChart"></div>
-          <div className="todaysSchedule"><Schedule/></div>
+          <div className="todaysSchedule">
+            <Schedule />
+          </div>
         </div>
       </div>
     </div>
