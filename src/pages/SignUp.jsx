@@ -1,11 +1,72 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithGoogle } from "../firebase";
+import { auth, signInWithGoogle } from "../firebase";
 import Glogo from "../assets/Image/glogo.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../Style/SignUp.css";
+import { AuthContext } from "../context/AuthContext";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const { currentUser } = useContext(AuthContext);
+  const [submit, setSubmit] = useState(false);
+
+  const handleSignUpGoogle = (e) => {
+    e.preventDefault();
+    setSubmit(true);
+
+    signInWithGoogle();
+  };
+  const handleSubmitOnlyEmailAndpassword = (e) => {
+    e.preventDefault();
+    setSubmit(true);
+    const displayName = e.target[1].value?.trim();
+    const email = e.target[2].value?.trim();
+    const password = e.target[3].value?.trim();
+    if (password.length < 6) {
+      return toast.warn("Password will be at least 6 letter...", {
+        position: "top-left",
+        theme: "colored",
+      });
+    }
+    try {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          toast.success("Signup Successfully!...", {
+            position: "top-left",
+            theme: "colored",
+          });
+          navigate("/dashboard");
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          toast.error(errorMessage,{
+            position:"top-left",
+            theme:"colored"
+          })
+          // ..
+        });
+
+      setSubmit(false);
+    } catch (err) {
+      toast.error(err, {
+        position: "top-left",
+        theme: "colored",
+      });
+      setSubmit(false);
+
+      // setLoading(false);
+    }
+  };
+  useEffect(() => {
+    if (currentUser) {
+      setSubmit(false);
+      navigate("/dashboard");
+    }
+  }, [currentUser]);
+
   return (
     <div className="splitScreen">
       <div className="left">
@@ -14,7 +75,7 @@ const SignUp = () => {
         </section>
       </div>
       <div className="right">
-        <form>
+        <form onSubmit={handleSubmitOnlyEmailAndpassword}>
           <section className="copy">
             <h2>Sign Up</h2>
             <p>Sign up to your account</p>
@@ -22,11 +83,8 @@ const SignUp = () => {
           <button
             className="signupBtn google"
             type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              signInWithGoogle();
-              navigate("/dashboard");
-            }}
+            onClick={handleSignUpGoogle}
+            disabled={submit}
           >
             <img src={Glogo} alt="Glogo" />
             Sign up with Google
@@ -48,8 +106,12 @@ const SignUp = () => {
               placeholder="Must be 6 characters"
             />
           </div>
-          <button className="signupBtn" type="submit">
-            Sign Up
+          <button
+            className={`signupBtn ${submit ? "activeS" : ""}`}
+            type="submit"
+            disabled={submit}
+          >
+            {submit ? "Signingup" : "Signup"}
           </button>
 
           <section className="copy">

@@ -1,26 +1,57 @@
 import React, { useContext, useEffect, useState } from "react";
-import { signInWithGoogle } from "../firebase";
-
+import { signInWithGoogle, auth } from "../firebase";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 import Glogo from "../assets/Image/glogo.png";
 import "../Style/SignUp.css";
 import { AuthContext } from "../context/AuthContext";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
+  const [submit, setSubmit] = useState(false);
 
-  const handleSignIn = async (e) => {
+  const handleSignInWithGoogle = async (e) => {
     e.preventDefault();
+    setSubmit(true);
 
     signInWithGoogle();
   };
 
-  useEffect(()=>{
-    if(currentUser){
-      navigate("/dashboard")
+  const handleSubmitUsingEmailAndPassword = (e) => {
+    e.preventDefault();
+    setSubmit(true);
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        toast.success("Successfully LogIn!...", {
+          position: "top-left",
+          theme: "colored",
+        });
+
+        navigate("/dashboard");
+        setSubmit(false);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage, {
+          position: "top-left",
+          theme: "colored",
+        });
+        // setLoading(false);
+        setSubmit(false);
+      });
+  };
+  useEffect(() => {
+    if (currentUser) {
+      setSubmit(false);
+      navigate("/dashboard");
     }
-  },[currentUser])
+  }, [currentUser]);
 
   return (
     <div className="splitScreen">
@@ -30,7 +61,7 @@ const SignIn = () => {
         </section>
       </div>
       <div className="right">
-        <form>
+        <form onSubmit={handleSubmitUsingEmailAndPassword}>
           <section className="copy">
             <h2>Sign In</h2>
             <p>Sign in to your account</p>
@@ -38,7 +69,8 @@ const SignIn = () => {
           <button
             className="signupBtn google"
             type="submit"
-            onClick={handleSignIn}
+            onClick={handleSignInWithGoogle}
+            disabled={submit}
           >
             <img src={Glogo} alt="Glogo" />
             Sign in with Google
@@ -57,8 +89,13 @@ const SignIn = () => {
               placeholder="Must be 6 characters"
             />
           </div>
-          <button className="signupBtn" type="submit">
-            Sign In
+          <button
+            className={`signupBtn ${submit ? "activeS" : ""}`}
+            type="submit"
+            disabled={submit}
+            
+          >
+            {submit ? "Signingin" : "Signin"}
           </button>
 
           <section className="copy">

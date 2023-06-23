@@ -81,6 +81,9 @@ label{
     text-decoration: uppercase;
     letter-spacing: 0.5px;
 }
+.activeS{
+  background-color: #817979;
+}
 .google{
     color: gray;
     background-color: white;

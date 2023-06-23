@@ -19,20 +19,19 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <ToastContainer>
-          <Routes>
-            <Route exact path="/" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <DashBoard />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </ToastContainer>
+        <ToastContainer/>
+        <Routes>
+          <Route exact path="/" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <DashBoard />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
       </BrowserRouter>
     </>
   );

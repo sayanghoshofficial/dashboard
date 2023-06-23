@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { Navigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBX2hdFqHlAQrjvVak-h_mdBVkqVz6Cgwo",
@@ -18,12 +18,13 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 const signInWithGoogle = () => {
- 
-  
   signInWithPopup(auth, provider)
     .then((result) => {
-      result && <Navigate to={"/dashboard"}/>;
-      
+      result &&
+        toast.success("Successfully LogIn!...", {
+          position: "top-left",
+          theme: "colored",
+        });
     })
     .catch((error) => {
       console.log(error);
