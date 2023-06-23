@@ -1,21 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { signInWithGoogle } from "../firebase";
 
 import { Link, useNavigate } from "react-router-dom";
 import Glogo from "../assets/Image/glogo.png";
 import "../Style/SignUp.css";
+import { AuthContext } from "../context/AuthContext";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const { currentUser } = useContext(AuthContext);
 
-  const handleSignIn = async(e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    try {
-      signInWithGoogle();
-    } catch (err) {
-      console.log(err);
-    }
+
+    signInWithGoogle();
   };
+
+  useEffect(()=>{
+    if(currentUser){
+      navigate("/dashboard")
+    }
+  },[currentUser])
 
   return (
     <div className="splitScreen">

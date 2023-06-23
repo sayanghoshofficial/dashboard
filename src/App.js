@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { DashBoard, SignIn, SignUp } from "./pages";
 import { AuthContext } from "./context/AuthContext";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   // current user details through useContext
@@ -18,18 +19,20 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <DashBoard />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
+        <ToastContainer>
+          <Routes>
+            <Route exact path="/" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <DashBoard />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </ToastContainer>
       </BrowserRouter>
     </>
   );
