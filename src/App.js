@@ -18,7 +18,7 @@ const App = () => {
   };
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/dashboard">
         <ToastContainer />
         <Routes>
           <Route exact path="/" element={<SignIn />} />

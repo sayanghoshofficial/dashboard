@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.dashboardMainCointainer h1{
+.dashboardMainCointainer h1 {
   margin-top: 10px;
 }
 .leftD {
@@ -20,7 +20,7 @@
 .dashBoardLeftCointainer {
   box-sizing: border-box;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -46,7 +46,7 @@
 }
 .endDiv {
   box-sizing: border-box;
-  height: 30%;
+  height: 35%;
   width: 130px;
   padding-top: 150px;
   display: flex;
@@ -54,7 +54,7 @@
   flex-direction: column;
   align-items: start;
 }
-.endDiv p{
+.endDiv p {
   cursor: pointer;
 }
 .rightD {
@@ -150,9 +150,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
-.lineChartHeading{
+.lineChartHeading {
   box-sizing: border-box;
   width: 90%;
   height: 100px;
@@ -160,7 +159,7 @@ h1 {
   flex-direction: column;
   align-items: start;
 }
-.innerHeading{
+.innerHeading {
   box-sizing: border-box;
   width: 30%;
   height: 100px;
@@ -169,10 +168,10 @@ h1 {
   align-items: start;
   justify-content: space-around;
 }
-.innerHeading h2{
+.innerHeading h2 {
   font-size: 20px;
 }
-.innerHeading p{
+.innerHeading p {
   margin-top: -26px;
   font-size: 13px;
   color: #c2c2c2;
@@ -194,19 +193,19 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.pieHeading{
+.pieHeading {
   width: 90%;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.pieHeading p{
+.pieHeading p {
   font-size: 13px;
   color: #c2c2c2;
 }
 
-.lineGraphBox{
+.lineGraphBox {
   background-color: white;
 }
 .todaysSchedule {
@@ -231,39 +230,40 @@ h1 {
   width: 90%;
   color: #d3d3d3;
 }
-.meetingTime div h5{
+.meetingTime div h5 {
   color: #8c8c8c;
 }
-.meetingTime div p{
+.meetingTime div p {
   font-size: 13px;
 }
-.fastMeeting{
+.fastMeeting {
   box-sizing: border-box;
   border-left: 4px solid #9bdd7c;
   padding-left: 10px;
-  line-height:2px
+  line-height: 2px;
 }
-.senondMeeting{
+.senondMeeting {
   border-left: 4px solid #6972c3;
   padding-left: 10px;
-  line-height:2px
+  line-height: 2px;
 }
-@media screen and (max-width:1330px) {
-  .dashboardMainCointainer{
+@media screen and (max-width: 1330px) {
+  .dashboardMainCointainer {
     gap: 20px;
   }
-  
-  .leftD{
-      width: 90%;
-      height: auto;
+
+  .leftD {
+    width: 90%;
+    height: auto;
   }
-  
-  .dashBoardLeftCointainer{
+
+  .dashBoardLeftCointainer {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .dashboardNavigation{
+  .dashboardNavigation {
+    width: 40%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -272,44 +272,48 @@ h1 {
     font-size: 10px;
     gap: 5px;
   }
-  .dashboardNavigation p img{
+  .dashboardNavigation p img {
     width: 10px;
     margin-right: 2px;
   }
-  .endDiv{
+  .endDiv {
+    width: 20%;
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     font-size: 10px;
     padding-top: 0;
     gap: 5px;
   }
-  .rightD{
+  .rightD {
     width: 90%;
   }
-  .dashboardNavContainer{
+  .dashboardNavContainer {
     justify-content: center;
   }
-  .annaliticBox{
+  .annaliticBox {
     justify-content: center;
   }
 }
-@media screen and (max-width:1100px) {
-  .leftD , .rightD{
+@media screen and (max-width: 1100px) {
+  .leftD,
+  .rightD {
     width: 100%;
   }
 }
 
-@media screen and (max-width:750px) {
-  .bottomDiv{
+@media screen and (max-width: 750px) {
+  .bottomDiv {
     flex-direction: column;
     gap: 10px;
-
   }
-  .pieChart{
+  .pieChart {
     width: 100%;
   }
-  .todaysSchedule{
+  .todaysSchedule {
     width: 100%;
   }
 }
