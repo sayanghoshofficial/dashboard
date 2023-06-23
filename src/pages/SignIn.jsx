@@ -33,7 +33,7 @@ const SignIn = () => {
           theme: "colored",
         });
 
-        navigate("/dashboard");
+        navigate("/activities");
         setSubmit(false);
       })
       .catch((error) => {
@@ -49,7 +49,7 @@ const SignIn = () => {
   useEffect(() => {
     if (currentUser) {
       setSubmit(false);
-      navigate("/dashboard");
+      navigate("/activities");
     }
   }, [currentUser]);
 

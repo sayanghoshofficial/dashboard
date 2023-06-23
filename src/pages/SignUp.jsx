@@ -25,6 +25,12 @@ const SignUp = () => {
     const displayName = e.target[1].value?.trim();
     const email = e.target[2].value?.trim();
     const password = e.target[3].value?.trim();
+    if(!displayName){
+      return toast.warn("Please Provide Your Name",{
+        position:"top-left",
+        theme:"colored"
+      })
+    }
     if (password.length < 6) {
       return toast.warn("Password will be at least 6 letter...", {
         position: "top-left",
@@ -38,7 +44,7 @@ const SignUp = () => {
             position: "top-left",
             theme: "colored",
           });
-          navigate("/dashboard");
+          navigate("/activities");
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -63,7 +69,7 @@ const SignUp = () => {
   useEffect(() => {
     if (currentUser) {
       setSubmit(false);
-      navigate("/dashboard");
+      navigate("/activities");
     }
   }, [currentUser]);
 
@@ -91,11 +97,11 @@ const SignUp = () => {
           </button>
           <div className="inputCointainer name">
             <label htmlFor="fname">Full Name</label>
-            <input id="fname" name="fname" type="text" />
+            <input id="fname" name="fname" type="text" required/>
           </div>
           <div className="inputCointainer email">
             <label htmlFor="email">Email address</label>
-            <input id="email" name="email" type="email" />
+            <input id="email" name="email" type="email" required/>
           </div>
           <div className="inputCointainer password">
             <label htmlFor="password">Password</label>
@@ -104,6 +110,7 @@ const SignUp = () => {
               name="password"
               type="password"
               placeholder="Must be 6 characters"
+              required
             />
           </div>
           <button
