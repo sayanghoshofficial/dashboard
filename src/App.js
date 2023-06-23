@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { DashBoard, SignIn, SignUp } from "./pages";
+import { DashBoard, NotFound, SignIn, SignUp } from "./pages";
 import { AuthContext } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 
@@ -19,7 +19,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <ToastContainer/>
+        <ToastContainer />
         <Routes>
           <Route exact path="/" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
@@ -31,6 +31,7 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
