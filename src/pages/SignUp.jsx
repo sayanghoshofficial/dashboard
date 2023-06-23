@@ -40,7 +40,7 @@ const SignUp = () => {
     try {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          toast.success("Signup Successfully!...", {
+          toast.success("Signup Successfully...", {
             position: "top-left",
             theme: "colored",
           });

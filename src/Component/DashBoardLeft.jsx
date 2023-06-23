@@ -4,6 +4,8 @@ import piLogo from "../assets/Image/pie-chart.png";
 import tagLogo from "../assets/Image/supermarket.png";
 import settingLogo from "../assets/Image/setting.png";
 import scheduleLogo from "../assets/Image/timetable.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import userLogo from "../assets/Image/user.png";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
@@ -38,7 +40,16 @@ const DashBoardLeft = () => {
       <div className="endDiv">
         <p>Help</p>
         <p>Contact Us</p>
-        <p className="SignOut" onClick={(e)=>{signOut(auth)}}>
+        <p
+          className="SignOut"
+          onClick={(e) => {
+            signOut(auth);
+            toast.success("Successfully Signout...", {
+              position: "top-left",
+              theme: "colored",
+            });
+          }}
+        >
           <i className="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
         </p>
       </div>

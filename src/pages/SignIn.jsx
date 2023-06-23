@@ -28,7 +28,7 @@ const SignIn = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        toast.success("Successfully LogIn!...", {
+        toast.success("Successfully Login...", {
           position: "top-left",
           theme: "colored",
         });
@@ -78,7 +78,7 @@ const SignIn = () => {
 
           <div className="inputCointainer email">
             <label htmlFor="email">Email address</label>
-            <input id="email" name="email" type="email" />
+            <input id="email" name="email" type="email" required />
           </div>
           <div className="inputCointainer password">
             <label htmlFor="password">Password</label>
@@ -87,13 +87,13 @@ const SignIn = () => {
               name="password"
               type="password"
               placeholder="Must be 6 characters"
+              required
             />
           </div>
           <button
             className={`signupBtn ${submit ? "activeS" : ""}`}
             type="submit"
             disabled={submit}
-            
           >
             {submit ? "Signingin" : "Signin"}
           </button>
