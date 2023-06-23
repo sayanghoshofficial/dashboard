@@ -1,6 +1,6 @@
 export const LineChartData = [
     {
-        name: "Week 0",
+        name: "",
         Guest: 150,
         User: 200,
       },
@@ -25,7 +25,7 @@ export const LineChartData = [
       User: 300,
     },
     {
-        name: "Week 5",
+        name: "",
         Guest: 200,
         User: 250,
       },
