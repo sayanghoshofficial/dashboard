@@ -247,6 +247,12 @@ h1 {
   padding-left: 10px;
   line-height: 2px;
 }
+
+@media screen and (max-width: 1415px) {
+  .annaliticBox{
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 1330px) {
   .dashboardMainCointainer {
     gap: 20px;
@@ -291,12 +297,6 @@ h1 {
   .rightD {
     width: 90%;
   }
-  .dashboardNavContainer {
-    justify-content: center;
-  }
-  .annaliticBox {
-    justify-content: center;
-  }
 }
 @media screen and (max-width: 1100px) {
   .leftD,
@@ -306,6 +306,13 @@ h1 {
 }
 
 @media screen and (max-width: 750px) {
+  .dashboardMainCointainer h1{
+    font-size: 30px;
+  }
+  
+  .dashboardNavContainer h1{
+    font-size: 20px;
+  }
   .bottomDiv {
     flex-direction: column;
     gap: 10px;
@@ -315,5 +322,10 @@ h1 {
   }
   .todaysSchedule {
     width: 100%;
+  }
+}
+@media screen and (max-width: 430px) {
+  .dashboardNavContainer {
+    justify-content: center;
   }
 }

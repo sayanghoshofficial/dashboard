@@ -1,3 +1,62 @@
+# Create React Dashboard App
+
+This is the Hosting Page [Dashboard](https://sayanghoshofficial.github.io/dashboard)
+
+## Sign In page
+
+![Sign In](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/892e8de1-2acb-4776-ba36-050babfdc4be)
+![Sign In Responsive](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/6ec7f72d-bd4c-46da-899a-cb13221be1e3)
+
+
+## Sign Up Page
+
+![SignUp](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/22a0ae98-6463-4b52-b16e-6451ff9a50df)
+![SignUp Responsive ness](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/50612e00-376e-40a9-995b-027f28d49e4e)
+
+# Dashboard Page
+
+![dashboard](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/7eb1584d-4e3c-4b36-9cec-2e4f0199178a)
+![dashboard Responsive 1](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/8722b7c1-fe9e-4c61-8271-45c0d0943532)
+![dashboard Responsive 2](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/2cefb82b-7165-4f04-9553-4ab97b4878d8)
+![dashboard Responsive 3](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/33cc70dd-79a2-42b3-8376-186862272858)
+
+
+## Functionality
+
+#### Implement Google Sign In with normal email sign In both
+
+#### Use Firebase for database authentication
+
+#### Implementing graph in dashboard page
+
+#### Create dummy data for graph
+
+#### Make Is responsive for all Browsers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
