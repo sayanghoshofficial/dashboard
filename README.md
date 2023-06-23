@@ -20,6 +20,10 @@ This is the Hosting Page [Dashboard](https://sayanghoshofficial.github.io/dashbo
 ![dashboard Responsive 2](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/2cefb82b-7165-4f04-9553-4ab97b4878d8)
 ![dashboard Responsive 3](https://github.com/sayanghoshofficial/my-chat-app/assets/99132893/33cc70dd-79a2-42b3-8376-186862272858)
 
+# 404 Page Not Found
+
+![404 page not found](https://github.com/sayanghoshofficial/dashboard/assets/99132893/8bc17db6-b837-4da0-a6c0-acde28d093df)
+
 
 ## Functionality
 
